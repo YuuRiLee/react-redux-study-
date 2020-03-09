@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import store from "../store";
+import { connect } from "react-redux";
 import AddNumber from "../components/AddNumber";
 
+export default connect()(AddNumber);
+
+/*
 export default class extends Component {
   render() {
     const btnClick = (size) => {
@@ -13,3 +15,4 @@ export default class extends Component {
     return <AddNumber onClick={btnClick}></AddNumber>;
   }
 }
+*/

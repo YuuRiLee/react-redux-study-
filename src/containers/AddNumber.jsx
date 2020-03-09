@@ -1,7 +1,18 @@
 import { connect } from "react-redux";
 import AddNumber from "../components/AddNumber";
 
-export default connect()(AddNumber);
+function mapReduxDispathToReactProps(dispatch) {
+  const btnClick = (size) => {
+    dispatch({
+      type: 'INCREMENT',
+      size: size
+    });
+  };
+  return {
+    onClick: btnClick
+  }
+}
+export default connect(null, mapReduxDispathToReactProps)(AddNumber);
 
 /*
 export default class extends Component {
